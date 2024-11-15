@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/shop.css">
+    <link rel="stylesheet" href="./assets/css/trendingprd.css">
+    <link rel="stylesheet" href="./assets/css/tintuc.css">
+    <link rel="stylesheet" href="./assets/css/blog.css">
+    <link rel="stylesheet" href="./assets/css/motasp.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <title>Fiberico</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="header-top" id="headerTop">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-around">
+                    <div class="col-xl-5 col-md-4 col-sm-4 greeting">
+                        Chào mừng bạn đến với cửa hàng hữu cơ Fiberico
+                    </div>
+                    <div class="contact">
+                        <a href="#" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="ins"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="tt"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="mail"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                    <div class="col-xl-3 col-md-3 col-sm-2 information">
+                        <button type="button" class="btn infor" data-toggle="modal" data-target="#ttnhom">
+                            TT nhóm
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade modal-form modal-ff" id="ttnhom" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header modal-title">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <h5 class="modal-title" id="exampleModalLabel">
+                                            Các thành viên trong nhóm
+                                        </h5>
+                                    </div>
+                                    <div class="modal-body-ttnhom">
+                                        <span class="d-block">Nguyễn Hùng Vương</span>
+                                        <span class="d-block">Nguyễn Duy Hoài Trung</span>
+                                        <span class="d-block">Nguyễn Hoàng Nhật Anh </span>
+                                        <span class="d-block">Nguyễn Thanh Phong</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 col-sm-6 log-sign">
+                        <!-- Hiển thị tên người dùng sau khi đăng nhập hoặc đăng ký -->
+                        <div class="dropdown" id="userAccount" style="display: none;">
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton "
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="usernameDisplay"></span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" id="logoutButton" href="#">Đăng xuất</a>
+                            </div>
+                        </div>
+                        <!-- Button Đăng nhập -->
+                        <button type="button" class="btn login col-3 mr-1" data-toggle="modal" data-target="#login">
+                            Đăng nhập
+                        </button>
+
+                        <!-- Modal Đăng nhập -->
+                        <div class="modal fade modal-form modal-ff" id="login" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <img class="inner-img" src="./assets/img/logo web/logo2.png" alt="img-1" />
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="loginForm">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Nhập tên đăng nhập"
+                                                    id="loginUsername" autocomplete="on" autofocus />
+                                                <span id="loginUsernameError" class="text-danger"
+                                                    style="display: none">Tên đăng nhập không hợp
+                                                    lệ.</span>
+                                            </div>
+                                            <div class="form-group position-relative">
+                                                <input type="password" class="form-control password-input"
+                                                    placeholder="Nhập mật khẩu" id="loginPassword" />
+                                                <span class="toggle-password"
+                                                    onclick="togglePasswordVisibility('loginPassword')"><i
+                                                        class="fa-regular fa-eye"></i></span>
+                                            </div>
+                                            <div class="form-group form-check">
+                                                <input type="checkbox" class="form-check-input" />Nhớ tôi
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn button">Đăng nhập</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Button Đăng ký -->
+                        <button type="button" class="btn login col-3 mr-2" data-toggle="modal" data-target="#sign">
+                            Đăng kí
+                        </button>
+
+                        <!-- Modal Đăng ký -->
+                        <div class="modal fade modal-form modal-ff" id="sign" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content box-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <img class="inner-img" src="./assets/img/logo web/logo2.png" alt="img-1" />
+                                    </div>
+                                    <div class="modal-body">
+                                        <form onsubmit="validateRegisterForm(event)">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" placeholder="Nhập email"
+                                                    id="registerEmail" autocomplete="on" autofocus />
+                                                <span id="registerEmailError" class="text-danger"
+                                                    style="display: none">Email không đúng định
+                                                    dạng.</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Tên đăng nhập"
+                                                    autocomplete="on" />
+                                            </div>
+                                            <div class="form-group position-relative">
+                                                <input type="password" class="form-control password-input"
+                                                    placeholder="Nhập mật khẩu" id="registerPassword1" />
+                                                <span class="toggle-password"
+                                                    onclick="togglePasswordVisibility('registerPassword1')"><i
+                                                        class="fa-regular fa-eye"></i></span>
+                                            </div>
+                                            <div class="form-group position-relative">
+                                                <input type="password" class="form-control password-input"
+                                                    placeholder="Nhập lại mật khẩu" id="registerPassword2" />
+                                                <span class="toggle-password"
+                                                    onclick="togglePasswordVisibility('registerPassword2')"><i
+                                                        class="fa-regular fa-eye"></i></span>
+                                                <span id="passwordError" class="text-danger" style="display: none">Mật
+                                                    khẩu không khớp.</span>
+                                            </div>
+                                            <div class="form-group form-check">
+                                                <input type="checkbox" class="form-check-input" id="termsCheckbox" />
+                                                Tôi đồng ý với các điều khoản
+                                                <span id="termsError" class="text-danger" style="display: none">Bạn phải
+                                                    đồng ý với các điều
+                                                    khoản.</span>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn button">
+                                                    Đăng ký
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main" id="headerMain">
+            <div class="containerr">
+                <div class="row">
+                    <div class="inner-wrap col-12 d-flex">
+                        <div class="logo d-flex col-lg-4 col-md-3 col-sm-4 col-4">
+                            <img class="col-lg-4 col-md-6 col-sm-12" src="./assets/img/logo web/logo2.png"
+                                alt="img-1" />
+                            <h3 class="col-lg-8 col-md-6 col-sm-12">Nông sản sạch</h3>
+                        </div>
+                        <div
+                            class="function-pc col-lg-8 col-md-9 col-sm-8 col-8 d-flex text-center align-items-center ">
+                            <div class="navbar col-10">
+                                <a class="col-lg-2 col-sm-4" href="home.html">Trang chủ</a>
+                                <a class="col-lg-2 col-sm-4" href="shop.html">Cửa hàng</a>
+                                <a class="col-lg-2 col-sm-4" href="trendingprd.html">Bán chạy</a>
+                                <a class="col-lg-2 col-sm-4" href="tintuc.html">Tin tức</a>
+                                <a class="col-lg-2 col-sm-4" href="gioithieu.html">Giới thiệu</a>
+                            </div>
+                            <div class="cart-search col-2">
+                                <div class="cart">
+                                    <a href="giohang.html" aria-label="Giỏ hàng">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header -->
+    <!-- body  -->
+    <!-- bg shop -->
+    <section class="section-one">
+        <div class="row">
+            <div class="content col-xl-12">
+                <p class="shop-info"> ~FIBERICO~ </p>
+                <h3 class="title">Nâng tầm sức khỏe với thực phẩm hữu cơ chất lượng!</h3>
+            </div>
+        </div>
+    </section>
+    <!-- End bg shop -->
+    <!-- danh mục sp -->
+    <section class="ban-chay list-ogranic">
+        <div class="inner-deco">
+            <img class="decco1" src="./assets/img/trang-tri-nen/bap-cai.png" alt="">
+            <img class="decco2" src="./assets/img/trang-tri-nen/bap-ngo.png" alt="">
+            <img class="decco3" src="./assets/img/trang-tri-nen/bo.png" alt="">
+            <img class="decco4" src="./assets/img/trang-tri-nen/bo-1.png" alt="">
+            <img class="decco5" src="./assets/img/trang-tri-nen/carrot.png" alt="">
+            <img class="decco6" src="./assets/img/trang-tri-nen/cu-den.png" alt="">
+            <img class="decco7" src="./assets/img/trang-tri-nen/cu-hanh.png" alt="">
+            <img class="decco8" src="./assets/img/trang-tri-nen/dua-hau.png" alt="">
+            <img class="decco9" src="./assets/img/trang-tri-nen/dua-luoi.png" alt="">
+            <img class="decco10" src="./assets/img/trang-tri-nen/cu-den.png" alt="">
+            <img class="decco11" src="./assets/img/trang-tri-nen/cam.png" alt="">
+            <img class="decco12" src="./assets/img/trang-tri-nen/chanh.png" alt="">
+            <img class="decco13" src="./assets/img/trang-tri-nen/cu-hanh-1.png" alt="">
+            <img class="decco14" src="./assets/img/trang-tri-nen/dau-halan.png" alt="">
+            <img class="decco15" src="./assets/img/trang-tri-nen/cu-toi-1.png" alt="">
+            <img class="decco16" src="./assets/img/trang-tri-nen/cu-toi.png" alt="">
+            <img class="decco17" src="./assets/img/trang-tri-nen/bap-cai.png" alt="">
+            <img class="decco18" src="./assets/img/trang-tri-nen/cu-hanh.png" alt="">
+            <img class="decco19" src="./assets/img/trang-tri-nen/dua-thom.png" alt="">
+            <img class="decco20" src="./assets/img/trang-tri-nen/nho-1.png" alt="">
+            <img class="decco21" src="./assets/img/trang-tri-nen/mang-tay-2.png" alt="">
+            <img class="decco22" src="./assets/img/trang-tri-nen/mang-tay.png" alt="">
+            <img class="decco23" src="./assets/img/trang-tri-nen/oliu.png" alt="">
+            <img class="decco24" src="./assets/img/trang-tri-nen/trai-le.png" alt="">
+            <img class="decco25" src="./assets/img/trang-tri-nen/yen-mach.png" alt="">
+            <img class="decco26" src="./assets/img/trang-tri-nen/chanh.png" alt="">
+            <img class="decco27" src="./assets/img/trang-tri-nen/mang-tay.png" alt="">
+            <img class="decco28" src="./assets/img/trang-tri-nen/nho.png" alt="">
+            <img class="decco29" src="./assets/img/trang-tri-nen/yen-mach.png" alt="">
+            <img class="decco30" src="./assets/img/trang-tri-nen/nho.png" alt="">
+        </div>
+        <div class="container ">
+            <div class="mo-ta">
+                <div class="product-detail">
+                    <!-- Khu vực ảnh sản phẩm -->
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img id="mainImage" src="./assets/img/san-pham/mo-ta/bo-2.jpg" alt="Bơ Hass chính">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="./assets/img/san-pham/mo-ta/bo-2.jpg" alt="Thumbnail 1"
+                                onclick="changeImage(this)" class="active">
+                            <img src="./assets/img/san-pham/mo-ta/bo-1.jpg" alt="Thumbnail 1"
+                                onclick="changeImage(this)">
+                            <img src="./assets/img/san-pham/mo-ta/bo-3.jpg" alt="Thumbnail 2"
+                                onclick="changeImage(this)">
+                            <img src="./assets/img/san-pham/mo-ta/bo-4.jpg" alt="Thumbnail 3"
+                                onclick="changeImage(this)">
+                        </div>
+                    </div>
+
+                    <!-- Khu vực thông tin sản phẩm -->
+                    <div class="product-info">
+                        <h1>Bơ Hass</h1>
+                        <div class="product-rating">
+                            <span>⭐⭐⭐⭐⭐</span> (4.9 dựa trên 02 đánh giá) | 24 đã đặt
+                        </div>
+                        <div class="product-price">40.000đ/kg</div>
+                        <p class="product-description">
+                            Bơ Hass là một trong những giống bơ nổi tiếng và phổ biến nhất trên thế giới nhờ hương vị
+                            thơm ngon.
+                        </p>
+
+                        <!-- Số lượng -->
+                        <div class="product-options">
+                            <div class="option-quantity">
+                                <span>Số lượng:</span>
+                                <span class="dem">
+                                    <input type="number" value="1" min="1">
+                                </span>
+                                <span>85 sản phẩm có sẵn</span>
+                            </div>
+                        </div>
+
+                        <!-- Nút thêm vào giỏ hàng và yêu thích -->
+                        <div class="product-buttons">
+                            <button class="btn add-to-cart"><a class="tt" href="giohang.html">Thêm vào giỏ hàng</a></button>
+                            <button class="btn add-to-wishlist">Yêu thích</button>
+                        </div>
+
+                        <!-- SKU và danh mục -->
+                        <div class="product-meta">
+                            <p>SKU: BO-HASS</p>
+                            <p>Danh mục: Trái cây</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs cho mô tả, thông tin bổ sung và đánh giá -->
+                <div class="product-tabs">
+                    <button class="tab active" onclick="openTab('description')">Mô tả</button>
+                    <button class="tab" onclick="openTab('additional-info')">Thông tin bổ sung</button>
+                    <button class="tab" onclick="openTab('reviews')">Đánh giá (02)</button>
+                </div>
+
+                <div id="description" class="tab-content active">
+                    <p>Bơ Hass là một loại bơ cao cấp với hương vị đặc trưng, béo ngậy, được yêu thích trên toàn thế
+                        giới. Quả bơ có vỏ ngoài sần sùi, khi chín chuyển sang màu tím đen, ruột màu vàng óng, mềm mịn
+                        và dễ chế biến. Bơ Hass cung cấp nhiều dưỡng chất thiết yếu như chất béo không bão hòa, chất xơ,
+                        vitamin E, C, K và khoáng chất như kali, magiê. Kích thước quả bơ vừa phải, dễ múc, thích hợp để
+                        làm các món salad, sinh tố, hoặc ăn kèm bánh mì nướng.</p>
+                </div>
+                <div id="additional-info" class="tab-content">
+                    <p>Bơ Hass không chỉ nổi bật với hương vị thơm ngon mà còn mang lại nhiều lợi ích sức khỏe. Chất béo
+                        không bão hòa trong bơ giúp giảm cholesterol xấu, tốt cho hệ tim mạch. Ngoài ra, hàm lượng
+                        vitamin E và chất chống oxy hóa cao hỗ trợ dưỡng da, giúp da khỏe mạnh và sáng mịn. Đây cũng là
+                        loại quả có tác dụng tăng cường hệ miễn dịch, phù hợp cho cả người lớn và trẻ em. Bơ Hass dễ bảo
+                        quản, có thể để ở nhiệt độ phòng khi chưa chín, và chuyển vào tủ lạnh khi quả đã chín mềm để giữ
+                        độ tươi ngon.</p>
+                </div>
+                <div id="reviews" class="tab-content">
+                    <p>"Bơ Hass thật sự chất lượng, ruột bơ vàng mịn và vị béo ngậy rất ngon. Tôi thường dùng để làm
+                        sinh tố hoặc ăn kèm bánh mì, rất tiện lợi và dinh dưỡng. Rất hài lòng với sản phẩm này!" – <i>Hương
+                            Trần</i> 
+                        <br>
+                        "Đây là loại bơ tôi yêu thích nhất! Dùng Bơ Hass trong salad làm món ăn thêm phần thơm ngon, lại
+                        tốt cho sức khỏe. Quả bơ dễ bảo quản và không mất nhiều công sức để chế biến. Chắc chắn sẽ mua
+                        lại." – <i>Quang Minh</i> </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End danh mục sp -->
+    <!-- End body -->
+    <!-- footer  -->
+    <footer class="footer">
+        <div class="container d-flex justify-content-between">
+            <div class="contact-info">
+                <div class="title">Liên hệ</div>
+                <b class="info">Công ty TNHH Thực phẩm và Dịch Vụ Fiberico</b>
+                <p class="info">
+                    Địa chỉ: An Dương Vương - Phường 3 - Quận 5 - TP.Hồ Chí Minh
+                </p>
+                <p class="info">Hotline: <a href="#123">0939793999</a></p>
+                <p class="info">Email: <a href="mailto:contact@fiberico.vn">contact@fiberico.vn</a></p>
+            </div>
+            <div class="menu-function">
+                <div class="title">Fiberico.vn</div>
+                <li><a href="gioithieu.html#ve-chung-toi">Về chúng tôi</a></li>
+                <li><a href="gioithieu.html#cau-chuyen">Câu chuyện về Fiberico</a></li>
+                <li><a href="gioithieu.html#huong-dan">Hướng dẫn bảo quản</a></li>
+                <li><a href="gioithieu.html#blog">Blog Fiberico</a></li>
+                <li><a href="gioithieu.html#lien-he">Liên hệ</a></li>
+            </div>
+            <div class="help">
+                <div class="title">Trợ giúp</div>
+                <li><a href="gioithieu.html#hd-tt">Hướng dẫn thanh toán</a></li>
+                <li><a href="gioithieu.html#chinh-sach">Chính sách bảo mật</a></li>
+                <li><a href="gioithieu.html#cham-soc">Chăm sóc khách hàng</a></li>
+                <li><a href="gioithieu.html#dieu-khoan">Điều khoản sử dụng</a></li>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer  -->
+    <script src="./assets/bootstrap/jquery.slim.min.js"></script>
+    <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/home.js"></script>
+    <script src="./assets/js/shop.js"></script>
+    <script src="./assets/js/motasp.js"></script>
+    <script src="./assets/js/login.js"></script>
+</body>
+
+</html>

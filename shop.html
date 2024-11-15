@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/home.css">
+  <link rel="stylesheet" href="./assets/css/shop.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <title>Fiberico</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header">
+    <div class="header-top" id="headerTop">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-around">
+          <div class="col-xl-5 col-md-4 col-sm-4 greeting">
+            Chào mừng bạn đến với cửa hàng hữu cơ Fiberico
+          </div>
+          <div class="contact">
+            <a href="#" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="ins"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="tt"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" class="mail"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+          <div class="col-xl-3 col-md-3 col-sm-2 information">
+            <button type="button" class="btn infor" data-toggle="modal" data-target="#ttnhom">
+              TT nhóm
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade modal-form modal-ff" id="ttnhom" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header modal-title">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Các thành viên trong nhóm
+                    </h5>
+                  </div>
+                  <div class="modal-body-ttnhom">
+                    <span class="d-block">Nguyễn Hùng Vương</span>
+                    <span class="d-block">Nguyễn Duy Hoài Trung</span>
+                    <span class="d-block">Nguyễn Hoàng Nhật Anh </span>
+                    <span class="d-block">Nguyễn Thanh Phong</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-4 col-sm-6 log-sign">
+            <!-- Hiển thị tên người dùng sau khi đăng nhập hoặc đăng ký -->
+            <div class="dropdown" id="userAccount" style="display: none;">
+              <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton "
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span id="usernameDisplay"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" id="logoutButton" href="#">Đăng xuất</a>
+              </div>
+            </div>
+            <!-- Button Đăng nhập -->
+            <button type="button" class="btn login col-3 mr-1" data-toggle="modal" data-target="#login">
+              Đăng nhập
+            </button>
+
+            <!-- Modal Đăng nhập -->
+            <div class="modal fade modal-form modal-ff" id="login" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <img class="inner-img" src="./assets/img/logo web/logo2.png" alt="img-1" />
+                  </div>
+                  <div class="modal-body">
+                    <form id="loginForm">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nhập tên đăng nhập" id="loginUsername"
+                          autocomplete="on" autofocus />
+                        <span id="loginUsernameError" class="text-danger" style="display: none">Tên đăng nhập không hợp
+                          lệ.</span>
+                      </div>
+                      <div class="form-group position-relative">
+                        <input type="password" class="form-control password-input" placeholder="Nhập mật khẩu"
+                          id="loginPassword" />
+                        <span class="toggle-password" onclick="togglePasswordVisibility('loginPassword')"><i
+                            class="fa-regular fa-eye"></i></span>
+                      </div>
+                      <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" />Nhớ tôi
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" class="btn button">Đăng nhập</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Button Đăng ký -->
+            <button type="button" class="btn login col-3 mr-2" data-toggle="modal" data-target="#sign">
+              Đăng kí
+            </button>
+
+            <!-- Modal Đăng ký -->
+            <div class="modal fade modal-form modal-ff" id="sign" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content box-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <img class="inner-img" src="./assets/img/logo web/logo2.png" alt="img-1" />
+                  </div>
+                  <div class="modal-body">
+                    <form onsubmit="validateRegisterForm(event)">
+                      <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Nhập email" id="registerEmail"
+                          autocomplete="on" autofocus />
+                        <span id="registerEmailError" class="text-danger" style="display: none">Email không đúng định
+                          dạng.</span>
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Tên đăng nhập" autocomplete="on" />
+                      </div>
+                      <div class="form-group position-relative">
+                        <input type="password" class="form-control password-input" placeholder="Nhập mật khẩu"
+                          id="registerPassword1" />
+                        <span class="toggle-password" onclick="togglePasswordVisibility('registerPassword1')"><i
+                            class="fa-regular fa-eye"></i></span>
+                      </div>
+                      <div class="form-group position-relative">
+                        <input type="password" class="form-control password-input" placeholder="Nhập lại mật khẩu"
+                          id="registerPassword2" />
+                        <span class="toggle-password" onclick="togglePasswordVisibility('registerPassword2')"><i
+                            class="fa-regular fa-eye"></i></span>
+                        <span id="passwordError" class="text-danger" style="display: none">Mật khẩu không khớp.</span>
+                      </div>
+                      <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="termsCheckbox" />
+                        Tôi đồng ý với các điều khoản
+                        <span id="termsError" class="text-danger" style="display: none">Bạn phải đồng ý với các điều
+                          khoản.</span>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" class="btn button">
+                          Đăng ký
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-main" id="headerMain">
+      <div class="containerr">
+        <div class="row">
+          <div class="inner-wrap col-12 d-flex">
+            <div class="logo d-flex col-lg-4 col-md-3 col-sm-4 col-4">
+              <img class="col-lg-5 col-md-6 col-sm-12" src="./assets/img/logo web/logo2.png" alt="img-1" />
+              <h3 class="col-lg-7 col-md-6 col-sm-12">Nông sản sạch</h3>
+            </div>
+            <div class="function-pc col-lg-8 col-md-9 col-sm-8 col-8 d-flex text-center align-items-center ">
+              <div class="navbar col-10">
+                <a class="col-lg-2 col-sm-4" href="home.html">Trang chủ</a>
+                <a class="col-lg-2 col-sm-4" href="shop.html">Cửa hàng</a>
+                <a class="col-lg-2 col-sm-4" href="trendingprd.html">Bán chạy</a>
+                <a class="col-lg-2 col-sm-4" href="tintuc.html">Tin tức</a>
+                <a class="col-lg-2 col-sm-4" href="gioithieu.html">Giới thiệu</a>
+              </div>
+              <div class="cart-search col-2">
+                <div class="cart">
+                  <a href="giohang.html" aria-label="Giỏ hàng">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End header -->
+  <!-- body  -->
+  <!-- bg shop -->
+  <section class="section-one">
+    <div class="row">
+      <div class="content col-xl-12">
+        <p class="shop-info"> ~FIBERICO~ </p>
+        <h3 class="title">Nâng tầm sức khỏe với thực phẩm hữu cơ chất lượng!</h3>
+      </div>
+    </div>
+  </section>
+  <!-- End bg shop -->
+  <!-- danh mục sp -->
+  <section class="section-two">
+    <div class="inner-deco">
+      <img class="decco1" src="./assets/img/trang-tri-nen/bap-cai.png" alt="">
+      <img class="decco2" src="./assets/img/trang-tri-nen/bap-ngo.png" alt="">
+      <img class="decco3" src="./assets/img/trang-tri-nen/bo.png" alt="">
+      <img class="decco4" src="./assets/img/trang-tri-nen/bo-1.png" alt="">
+      <img class="decco5" src="./assets/img/trang-tri-nen/carrot.png" alt="">
+      <img class="decco6" src="./assets/img/trang-tri-nen/cu-den.png" alt="">
+      <img class="decco7" src="./assets/img/trang-tri-nen/cu-hanh.png" alt="">
+      <img class="decco8" src="./assets/img/trang-tri-nen/dua-hau.png" alt="">
+      <img class="decco9" src="./assets/img/trang-tri-nen/dua-luoi.png" alt="">
+      <img class="decco10" src="./assets/img/trang-tri-nen/cu-den.png" alt="">
+      <img class="decco11" src="./assets/img/trang-tri-nen/cam.png" alt="">
+      <img class="decco12" src="./assets/img/trang-tri-nen/chanh.png" alt="">
+      <img class="decco13" src="./assets/img/trang-tri-nen/cu-hanh-1.png" alt="">
+      <img class="decco14" src="./assets/img/trang-tri-nen/dau-halan.png" alt="">
+      <img class="decco15" src="./assets/img/trang-tri-nen/cu-toi-1.png" alt="">
+      <img class="decco16" src="./assets/img/trang-tri-nen/cu-toi.png" alt="">
+      <img class="decco17" src="./assets/img/trang-tri-nen/bap-cai.png" alt="">
+      <img class="decco18" src="./assets/img/trang-tri-nen/cu-hanh.png" alt="">
+      <img class="decco19" src="./assets/img/trang-tri-nen/dua-thom.png" alt="">
+      <img class="decco20" src="./assets/img/trang-tri-nen/nho-1.png" alt="">
+      <img class="decco21" src="./assets/img/trang-tri-nen/mang-tay-2.png" alt="">
+      <img class="decco22" src="./assets/img/trang-tri-nen/mang-tay.png" alt="">
+      <img class="decco23" src="./assets/img/trang-tri-nen/oliu.png" alt="">
+      <img class="decco24" src="./assets/img/trang-tri-nen/trai-le.png" alt="">
+      <img class="decco25" src="./assets/img/trang-tri-nen/yen-mach.png" alt="">
+      <img class="decco26" src="./assets/img/trang-tri-nen/chanh.png" alt="">
+      <img class="decco27" src="./assets/img/trang-tri-nen/mang-tay.png" alt="">
+      <img class="decco28" src="./assets/img/trang-tri-nen/nho.png" alt="">
+      <img class="decco29" src="./assets/img/trang-tri-nen/yen-mach.png" alt="">
+      <img class="decco30" src="./assets/img/trang-tri-nen/nho.png" alt="">
+    </div>
+    <!-- Form tìm kiếm chi tiết -->
+    <section class="search-bar container my-4 ">
+      <form id="detailedSearchForm" class="row col-12">
+        <div class="col-lg-4 col-sm-6">
+          <input type="text" id="searchName" class="form-control" placeholder="Tìm theo tên sản phẩm">
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <select id="categoryFilter" class="form-control">
+            <option value="">Tất cả danh mục</option>
+            <option value="Hoa quả">Hoa quả</option>
+            <option value="Rau củ">Rau củ</option>
+            <option value="Hạt sấy">Hạt sấy</option>
+            <option value="Hữu cơ">Hữu cơ</option>
+          </select>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <select id="priceRange" class="form-control">
+            <option value="">Chọn khoảng giá</option>
+            <option value="0-50000">0 - 50k</option>
+            <option value="0-100000">0 - 100k</option>
+            <option value="100000-200000">100k - 200k</option>
+            <option value="200000-500000">200k - 500k</option>
+            <option value="0-500000">Dưới 500k</option>
+            <option value="500000-1000000">500k - 1 triệu</option>
+          </select>
+        </div>
+        <div class="col-lg-2 col-sm-6">
+          <button type="submit" class="btn btn-success w-100">Tìm kiếm</button>
+        </div>
+      </form>
+    </section>
+    <!-- Danh sách sản phẩm -->
+    <section class="product-list list-ogranic container my-4">
+      <div id="productContainer" class="row list">
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="chanh dây" data-category="Hoa quả" data-price="200000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/chanh-day.png" alt="" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Chanh dây</h4>
+            <p class="price">60.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="Bơ" data-category="Hoa quả" data-price="40000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/bo-hass.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Bơ</h4>
+            <p class="price">40.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="Cam" data-category="Hoa quả" data-price="30000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/CamCam.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Cam</h4>
+            <p class="price">30.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="chanh xanh" data-category="Hoa quả" data-price="20000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/chanh-xanh.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Chanh xanh</h4>
+            <p class="price">20.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="chanh vàng" data-category="Hoa quả" data-price="15000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/Chanh.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Chanh vàng</h4>
+            <p class="price">15.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="cherry" data-category="Hoa quả" data-price="149000000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/Cherry.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Cherry</h4>
+            <p class="price">1.490.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="đào" data-category="Hoa quả" data-price="50000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/dao.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Đào</h4>
+            <p class="price">50.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="Dâu tầm" data-category="Hoa quả" data-price="60000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/dau-tam.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Dâu tầm</h4>
+            <p class="price">60.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="Dâu tây" data-category="Hoa quả" data-price="55000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/dau-tay.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Dâu tây</h4>
+            <p class="price">40.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="salad ức gà" data-category="Hữu cơ" data-price="120000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/ucga.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Salad ức gà</h4>
+            <p class="price">120.000đ/phần</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="salad trứng gà" data-category="Hữu cơ" data-price="100000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/trung.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Salad trứng gà</h4>
+            <p class="price">70.000đ/phần</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="salad tôm tom sà lát" data-category="Hữu cơ" data-price="110000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/tom.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Salad tôm</h4>
+            <p class="price">110.000đ/phần</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="bắp cải" data-category="Rau củ" data-price="15000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/bap-cai.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Bắp cải</h4>
+            <p class="price">15.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="Bắp" data-category="Rau củ" data-price="20000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/BapOrNGo.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Bắp</h4>
+            <p class="price">20.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="bầu" data-category="Rau củ" data-price="18000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/baubi.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Bầu</h4>
+            <p class="price">18.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="bí đỏ" data-category="Rau củ" data-price="20000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/bi-do.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">bí đỏ</h4>
+            <p class="price">20.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="cà chua" data-category="Rau củ" data-price="19000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/ca-chua.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Cà chua</h4>
+            <p class="price">19.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="cải thìa" data-category="Rau củ" data-price="12000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/cai-thia.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Cải thìa</h4>
+            <p class="price">12.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="hạt bí đỏ" data-category="Hạt sấy" data-price="120000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/bido.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Hạt bí đỏ</h4>
+            <p class="price">120.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="hạt chia" data-category="Hạt sấy" data-price="110000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/chia.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Hạt chia</h4>
+            <p class="price">110.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="đậu đen" data-category="Hạt sấy" data-price="20000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/dauden.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Đậu đen</h4>
+            <p class="price">20.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="đậu nành" data-category="Hạt sấy" data-price="45000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/daunanh.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Đậu nành</h4>
+            <p class="price">45.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="đậu phộng" data-category="Hạt sấy" data-price="25000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/dauphong.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Đậu phộng</h4>
+            <p class="price">25.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="đạu xanh" data-category="Hạt sấy" data-price="20000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/dauxanh.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Đậu xanh nhà làm</h4>
+            <p class="price">20.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="Hạt hat óc chó" data-category="Hạt sấy" data-price="160000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/occho.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Hạt óc chó</h4>
+            <p class="price">160.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="nho sấy vàng khô" data-category="Hạt sấy" data-price="50000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/nhovang.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Nho khô</h4>
+            <p class="price">50.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="mè đen" data-category="Hạt sấy" data-price="70000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/meden.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Mè đen</h4>
+            <p class="price">55.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="việt quốc" data-category="Hoa quả" data-price="1.100.0000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/vietQuat.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Việt quốc</h4>
+            <p class="price">1.100.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="thanh long" data-category="Hoa quả" data-price="35000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/thanh-long.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Thanh long</h4>
+            <p class="price">35.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="xoài" data-category="Hoa quả" data-price="25000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/Mango.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Xoài</h4>
+            <p class="price">25.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="lựu" data-category="Hoa quả" data-price="45000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/Luu.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Lựu</h4>
+            <p class="price">45.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="dưa lưới" data-category="Hoa quả" data-price="50000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/DuaLuoi.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Dưa lưới</h4>
+            <p class="price">50.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="dưa hấu" data-category="Hoa quả" data-price="15000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/dua-hau.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Dưa hấu</h4>
+            <p class="price">15.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="chuối" data-category="Hoa quả" data-price="15000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/minion.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Chuối</h4>
+            <p class="price">15.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="khớm thơm" data-category="Hoa quả" data-price="20000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/pineapple.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Khớm</h4>
+            <p class="price">20.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="quýt thái" data-category="Hoa quả" data-price="60000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hoa-qua/quyt-thai.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Quýt thái</h4>
+            <p class="price">60.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="khoai tây" data-category="Rau củ" data-price="33000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/khoai-tay.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Khoai tây</h4>
+            <p class="price">33.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="mướp" data-category="Rau củ" data-price="12000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/muop.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">mướp</h4>
+            <p class="price">12.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="ớt chuông" data-category="Rau củ" data-price="120000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/otchuong.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Ớt chuông</h4>
+            <p class="price">120.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="đu đủ" data-category="Rau củ" data-price="25000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/dudu.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Đu đủ</h4>
+            <p class="price">25.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="dưa leo" data-category="Rau củ" data-price="35000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/dualeo.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Dưa leo</h4>
+            <p class="price">35.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="ớt đỏ" data-category="Rau củ" data-price="40000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/ot-do.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Ớt đỏ</h4>
+            <p class="price">40.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="diếp cá" data-category="Rau củ" data-price="15000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/diepca.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Diếp cá</h4>
+            <p class="price">15.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="cà rốt" data-category="Rau củ" data-price="15000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/rau-cu/carot.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Cà rốt</h4>
+            <p class="price">15.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="nước ép cà chua" data-category="Hữu cơ" data-price="20000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/epcachua.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Nước ép cà chua</h4>
+            <p class="price">20.000đ/ly</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="nước ép cam" data-category="Hữu cơ" data-price="20000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/epcam.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Nước ép cam</h4>
+            <p class="price">20.000đ/ly</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="nước ép dưa hấu" data-category="Hữu cơ" data-price="20000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/epduahau.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Nước ép dưa hấu</h4>
+            <p class="price">20.000đ/ly</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="nước ép táo" data-category="Hữu cơ" data-price="20000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/eptao.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Nước ép táo</h4>
+            <p class="price">20.000đ/ly</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="nước ép thơm khớm" data-category="Hữu cơ" data-price="20000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/epthom.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Nước ép thơm</h4>
+            <p class="price">20.000đ/ly</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="salad trái cây trai cay" data-category="Hữu cơ" data-price="60000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/traicay.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Salad trái cây</h4>
+            <p class="price">60.000đ/phần</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="yến mạch" data-category="Hạt sấy" data-price="150000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/yenmach.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Yến mạch</h4>
+            <p class="price">150.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="táo tao do đỏ tan cuong" data-category="Hạt sấy" data-price="280000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/taodo.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Táo đỏ Tân Cương</h4>
+            <p class="price">280.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="kỷ ky  tử" data-category="Hạt sấy" data-price="540000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/kytu.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Kỷ tử</h4>
+            <p class="price">70.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="hạt sen" data-category="Hạt sấy" data-price="100000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/sen.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Hạt sen</h4>
+            <p class="price">100.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="hạt kê" data-category="Hạt sấy" data-price="35000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/ke.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Hạt kê</h4>
+            <p class="price">35.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="kiwi" data-category="Hạt sấy" data-price="180000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/hat-say/kiwi.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Kiwi sấy khô</h4>
+            <p class="price">180.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="Salad greek" data-category="Hữu cơ" data-price="70000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/greek.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Salad Greek</h4>
+            <p class="price">70.000đ/phần</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="nước ép rau má" data-category="Hữu cơ" data-price="15000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/ep-rauma.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Nước ép rau má</h4>
+            <p class="price">15.000đ/ly</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="nước ép bưởi" data-category="Hữu cơ" data-price="20000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/epbuoi.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Nước ép bưởi</h4>
+            <p class="price">20.000đ/ly</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+        <div class="box col-lg-3 col-sm-6 product-item" data-name="Salad thái thai" data-category="Hữu cơ" data-price="40000">
+          <div class="inner-img">
+            <img src="./assets/img/san-pham/huu-co/thai.png" alt="Error" />
+          </div>
+          <div class="info-prd">
+            <h4 class="name">Salad thái</h4>
+            <p class="price">40.000đ/kg</p>
+            <a class="button" href="giohang.html">Thêm vào giỏ</a>
+            <a class="button" href="motasp.html">Chi tiết</a>
+          </div>
+        </div>
+      </div>
+      <div class="pagination-container my-4 text-center">
+        <button id="prevPage" class="btn button-2 btn-outline-secondary mr-2"><i
+            class="fa-solid fa-angle-left"></i></button>
+        <div id="paginationNumbers" class="d-inline"></div>
+        <button id="nextPage" class="btn button-2 btn-outline-secondary ml-2"><i
+            class="fa-solid fa-angle-right"></i></button>
+      </div>
+    </section>
+  </section>
+  <!-- footer  -->
+  <footer class="footer">
+    <div class="container d-flex justify-content-between">
+        <div class="contact-info">
+            <div class="title">Liên hệ</div>
+            <b class="info">Công ty TNHH Thực phẩm và Dịch Vụ Fiberico</b>
+            <p class="info">
+                Địa chỉ: An Dương Vương - Phường 3 - Quận 5 - TP.Hồ Chí Minh
+            </p>
+            <p class="info">Hotline: <a href="#123">0939793999</a></p>
+            <p class="info">Email: <a href="mailto:contact@fiberico.vn">contact@fiberico.vn</a></p>
+        </div>
+        <div class="menu-function">
+            <div class="title">Fiberico.vn</div>
+            <li><a href="gioithieu.html#ve-chung-toi">Về chúng tôi</a></li>
+            <li><a href="gioithieu.html#cau-chuyen">Câu chuyện về Fiberico</a></li>
+            <li><a href="gioithieu.html#huong-dan">Hướng dẫn bảo quản</a></li>
+            <li><a href="gioithieu.html#blog">Blog Fiberico</a></li>
+            <li><a href="gioithieu.html#lien-he">Liên hệ</a></li>
+        </div>
+        <div class="help">
+            <div class="title">Trợ giúp</div>
+            <li><a href="gioithieu.html#hd-tt">Hướng dẫn thanh toán</a></li>
+            <li><a href="gioithieu.html#chinh-sach">Chính sách bảo mật</a></li>
+            <li><a href="gioithieu.html#cham-soc">Chăm sóc khách hàng</a></li>
+            <li><a href="gioithieu.html#dieu-khoan">Điều khoản sử dụng</a></li>
+        </div>
+    </div>
+</footer>
+  <!-- End footer  -->
+  <script src="./assets/bootstrap/jquery.slim.min.js"></script>
+  <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/home.js"></script>
+  <script src="./assets/js/shop.js"></script>
+  <script src="./assets/js/login.js"></script>
+</body>
+
+</html>

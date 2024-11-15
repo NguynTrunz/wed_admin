@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/shop.css">
+    <link rel="stylesheet" href="./assets/css/trendingprd.css">
+    <link rel="stylesheet" href="./assets/css/tintuc.css">
+    <link rel="stylesheet" href="./assets/css/blog.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <title>Fiberico</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="header-top" id="headerTop">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-around">
+                    <div class="col-xl-5 col-md-4 col-sm-4 greeting">
+                        Chào mừng bạn đến với cửa hàng hữu cơ Fiberico
+                    </div>
+                    <div class="contact">
+                        <a href="#" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="ins"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="tt"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="mail"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                    <div class="col-xl-3 col-md-3 col-sm-2 information">
+                        <button type="button" class="btn infor" data-toggle="modal" data-target="#ttnhom">
+                            TT nhóm
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade modal-form modal-ff" id="ttnhom" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header modal-title">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <h5 class="modal-title" id="exampleModalLabel">
+                                            Các thành viên trong nhóm
+                                        </h5>
+                                    </div>
+                                    <div class="modal-body-ttnhom">
+                                        <span class="d-block">Nguyễn Hùng Vương</span>
+                                        <span class="d-block">Nguyễn Duy Hoài Trung</span>
+                                        <span class="d-block">Nguyễn Hoàng Nhật Anh </span>
+                                        <span class="d-block">Nguyễn Thanh Phong</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 col-sm-6 log-sign">
+                        <!-- Hiển thị tên người dùng sau khi đăng nhập hoặc đăng ký -->
+                        <div class="dropdown" id="userAccount" style="display: none;">
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton "
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="usernameDisplay"></span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" id="logoutButton" href="#">Đăng xuất</a>
+                            </div>
+                        </div>
+                        <!-- Button Đăng nhập -->
+                        <button type="button" class="btn login col-3 mr-1" data-toggle="modal" data-target="#login">
+                            Đăng nhập
+                        </button>
+
+                        <!-- Modal Đăng nhập -->
+                        <div class="modal fade modal-form modal-ff" id="login" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <img class="inner-img" src="./assets/img/logo web/logo2.png" alt="img-1" />
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="loginForm">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Nhập tên đăng nhập"
+                                                    id="loginUsername" autocomplete="on" autofocus />
+                                                <span id="loginUsernameError" class="text-danger"
+                                                    style="display: none">Tên đăng nhập không hợp
+                                                    lệ.</span>
+                                            </div>
+                                            <div class="form-group position-relative">
+                                                <input type="password" class="form-control password-input"
+                                                    placeholder="Nhập mật khẩu" id="loginPassword" />
+                                                <span class="toggle-password"
+                                                    onclick="togglePasswordVisibility('loginPassword')"><i
+                                                        class="fa-regular fa-eye"></i></span>
+                                            </div>
+                                            <div class="form-group form-check">
+                                                <input type="checkbox" class="form-check-input" />Nhớ tôi
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn button">Đăng nhập</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Button Đăng ký -->
+                        <button type="button" class="btn login col-3 mr-2" data-toggle="modal" data-target="#sign">
+                            Đăng kí
+                        </button>
+
+                        <!-- Modal Đăng ký -->
+                        <div class="modal fade modal-form modal-ff" id="sign" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content box-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <img class="inner-img" src="./assets/img/logo web/logo2.png" alt="img-1" />
+                                    </div>
+                                    <div class="modal-body">
+                                        <form onsubmit="validateRegisterForm(event)">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" placeholder="Nhập email"
+                                                    id="registerEmail" autocomplete="on" autofocus />
+                                                <span id="registerEmailError" class="text-danger"
+                                                    style="display: none">Email không đúng định
+                                                    dạng.</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Tên đăng nhập"
+                                                    autocomplete="on" />
+                                            </div>
+                                            <div class="form-group position-relative">
+                                                <input type="password" class="form-control password-input"
+                                                    placeholder="Nhập mật khẩu" id="registerPassword1" />
+                                                <span class="toggle-password"
+                                                    onclick="togglePasswordVisibility('registerPassword1')"><i
+                                                        class="fa-regular fa-eye"></i></span>
+                                            </div>
+                                            <div class="form-group position-relative">
+                                                <input type="password" class="form-control password-input"
+                                                    placeholder="Nhập lại mật khẩu" id="registerPassword2" />
+                                                <span class="toggle-password"
+                                                    onclick="togglePasswordVisibility('registerPassword2')"><i
+                                                        class="fa-regular fa-eye"></i></span>
+                                                <span id="passwordError" class="text-danger" style="display: none">Mật
+                                                    khẩu không khớp.</span>
+                                            </div>
+                                            <div class="form-group form-check">
+                                                <input type="checkbox" class="form-check-input" id="termsCheckbox" />
+                                                Tôi đồng ý với các điều khoản
+                                                <span id="termsError" class="text-danger" style="display: none">Bạn phải
+                                                    đồng ý với các điều
+                                                    khoản.</span>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn button">
+                                                    Đăng ký
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main" id="headerMain">
+            <div class="containerr">
+                <div class="row">
+                    <div class="inner-wrap col-12 d-flex">
+                        <div class="logo d-flex col-lg-4 col-md-3 col-sm-4 col-4">
+                            <img class="col-lg-4 col-md-6 col-sm-12" src="./assets/img/logo web/logo2.png"
+                                alt="img-1" />
+                            <h3 class="col-lg-8 col-md-6 col-sm-12">Nông sản sạch</h3>
+                        </div>
+                        <div
+                            class="function-pc col-lg-8 col-md-9 col-sm-8 col-8 d-flex text-center align-items-center ">
+                            <div class="navbar col-10">
+                                <a class="col-lg-2 col-sm-4" href="home.html">Trang chủ</a>
+                                <a class="col-lg-2 col-sm-4" href="shop.html">Cửa hàng</a>
+                                <a class="col-lg-2 col-sm-4" href="trendingprd.html">Bán chạy</a>
+                                <a class="col-lg-2 col-sm-4" href="tintuc.html">Tin tức</a>
+                                <a class="col-lg-2 col-sm-4" href="gioithieu.html">Giới thiệu</a>
+                            </div>
+                            <div class="cart-search col-2">
+                                <div class="cart">
+                                    <a href="giohang.html" aria-label="Giỏ hàng">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header -->
+    <!-- body  -->
+    <!-- bg shop -->
+    <section class="section-one">
+        <div class="row">
+            <div class="content col-xl-12">
+                <p class="shop-info"> ~FIBERICO~ </p>
+                <h3 class="title">Khám Phá Tin Tức & Blog Mới Nhất Về Nông Sản Sạch!</h3>
+            </div>
+        </div>
+    </section>
+    <!-- End bg shop -->
+    <!-- danh mục sp -->
+    <section class="ban-chay list-ogranic">
+        <div class="inner-deco">
+            <img class="decco1" src="./assets/img/trang-tri-nen/bap-cai.png" alt="">
+            <img class="decco2" src="./assets/img/trang-tri-nen/bap-ngo.png" alt="">
+            <img class="decco3" src="./assets/img/trang-tri-nen/bo.png" alt="">
+            <img class="decco4" src="./assets/img/trang-tri-nen/bo-1.png" alt="">
+            <img class="decco5" src="./assets/img/trang-tri-nen/carrot.png" alt="">
+            <img class="decco6" src="./assets/img/trang-tri-nen/cu-den.png" alt="">
+            <img class="decco7" src="./assets/img/trang-tri-nen/cu-hanh.png" alt="">
+            <img class="decco8" src="./assets/img/trang-tri-nen/dua-hau.png" alt="">
+            <img class="decco9" src="./assets/img/trang-tri-nen/dua-luoi.png" alt="">
+            <img class="decco10" src="./assets/img/trang-tri-nen/cu-den.png" alt="">
+            <img class="decco11" src="./assets/img/trang-tri-nen/cam.png" alt="">
+            <img class="decco12" src="./assets/img/trang-tri-nen/chanh.png" alt="">
+            <img class="decco13" src="./assets/img/trang-tri-nen/cu-hanh-1.png" alt="">
+            <img class="decco14" src="./assets/img/trang-tri-nen/dau-halan.png" alt="">
+            <img class="decco15" src="./assets/img/trang-tri-nen/cu-toi-1.png" alt="">
+            <img class="decco16" src="./assets/img/trang-tri-nen/cu-toi.png" alt="">
+            <img class="decco17" src="./assets/img/trang-tri-nen/bap-cai.png" alt="">
+            <img class="decco18" src="./assets/img/trang-tri-nen/cu-hanh.png" alt="">
+            <img class="decco19" src="./assets/img/trang-tri-nen/dua-thom.png" alt="">
+            <img class="decco20" src="./assets/img/trang-tri-nen/nho-1.png" alt="">
+            <img class="decco21" src="./assets/img/trang-tri-nen/mang-tay-2.png" alt="">
+            <img class="decco22" src="./assets/img/trang-tri-nen/mang-tay.png" alt="">
+            <img class="decco23" src="./assets/img/trang-tri-nen/oliu.png" alt="">
+            <img class="decco24" src="./assets/img/trang-tri-nen/trai-le.png" alt="">
+            <img class="decco25" src="./assets/img/trang-tri-nen/yen-mach.png" alt="">
+            <img class="decco26" src="./assets/img/trang-tri-nen/chanh.png" alt="">
+            <img class="decco27" src="./assets/img/trang-tri-nen/mang-tay.png" alt="">
+            <img class="decco28" src="./assets/img/trang-tri-nen/nho.png" alt="">
+            <img class="decco29" src="./assets/img/trang-tri-nen/yen-mach.png" alt="">
+            <img class="decco30" src="./assets/img/trang-tri-nen/nho.png" alt="">
+        </div>
+        <div class="container ">
+            <div class="titlee">
+                <img class="shape" src="./assets/img/trang-tri-nen/title-shape.png" alt="">
+                <h2 class="titlee-main">Tin tức & Blog <span>mới nhất</span></h2>
+                <p class="titlee-sub">Cập nhật thông tin nóng hổi về sản xuất nông nghiệp, kỹ thuật
+                    trồng trọt, và các xu hướng nông sản. Khám phá mẹo chăm sóc sức
+                    khỏe và công thức nấu ăn từ nông sản tươi sạch!</p>
+            </div>
+            <div class="blog-post">
+                <header class="blog-header">
+                    <h1>Nông sản Việt Nam: Những loại rau củ giúp tăng cường miễn dịch</h1>
+                    <p>Ngày đăng: 01/11/2024 - Tác giả: Organic Farm</p>
+                </header>
+
+                <!-- Phần giới thiệu với ảnh bên phải -->
+                <section class="blog-intro">
+                    <div class="intro-content">
+                        <h2>Giới Thiệu</h2>
+                        <p>Trong bối cảnh sức khỏe ngày càng trở thành mối quan tâm hàng đầu, việc bổ sung các loại thực
+                            phẩm giàu dinh dưỡng từ thiên nhiên đóng vai trò quan trọng giúp tăng cường hệ miễn dịch.
+                            Việt Nam không chỉ nổi tiếng với các loại trái cây nhiệt đới mà còn là quê hương của nhiều
+                            loại rau củ giàu vitamin và khoáng chất, hỗ trợ hệ miễn dịch tối ưu. Bài viết này sẽ giúp
+                            bạn khám phá những loại rau củ Việt Nam vừa quen thuộc vừa bổ dưỡng, giúp tăng sức đề kháng
+                            một cách tự nhiên.
+                        </p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="./assets/img/tin tức/gl4.jpg" alt="Tổng quan rau củ Việt Nam">
+                    </div>
+                </section>
+
+                <!-- Nội dung từng loại rau củ với bố cục so le -->
+                <section class="blog-content">
+                    <!-- Mục đầu tiên: ảnh bên trái, nội dung bên phải -->
+                    <div class="blog-item">
+                        <div class="item-image">
+                            <img src="./assets/img/tin tức/toi.webp" alt="Tỏi">
+                        </div>
+                        <div class="item-content">
+                            <h3>1. Tỏi – "Kháng sinh tự nhiên" từ Việt Nam</h3>
+                            <p>Tỏi không chỉ là gia vị quen thuộc trong bếp Việt mà còn là một "kháng sinh tự nhiên"
+                                tuyệt vời.
+                                Trong tỏi có chứa allicin – một hợp chất giúp kháng khuẩn, kháng virus, và tăng cường hệ
+                                miễn dịch.
+                                Thường xuyên sử dụng tỏi trong bữa ăn có thể giúp ngăn ngừa các bệnh do vi khuẩn và
+                                virus, nhất là trong mùa cảm cúm.
+                            </p>
+                            <p><strong>Cách sử dụng:</strong> Bạn có thể thêm tỏi vào các món xào, nấu canh, hoặc sử
+                                dụng tỏi ngâm mật ong để đạt hiệu quả tốt nhất.</p>
+                        </div>
+                    </div>
+
+                    <!-- Mục tiếp theo: ảnh bên phải, nội dung bên trái -->
+                    <div class="blog-item reverse">
+                        <div class="item-content">
+                            <h3>2. Gừng – Thần dược từ thiên nhiên</h3>
+                            <p>Gừng là một loại củ có tính ấm, giúp cơ thể dễ dàng chống lại các loại vi khuẩn và giảm
+                                viêm nhiễm.
+                                Gừng còn có khả năng chống oxy hóa cao, giúp tăng cường miễn dịch và bảo vệ cơ thể khỏi
+                                các tác nhân gây hại.</p>
+                            <p><strong>Cách sử dụng:</strong> Sử dụng gừng để pha trà gừng mật ong hoặc thêm vào các món
+                                ăn hàng ngày.
+                                Đặc biệt, trà gừng không chỉ tốt cho hệ miễn dịch mà còn giúp làm ấm cơ thể vào những
+                                ngày lạnh.
+                            </p>
+                        </div>
+                        <div class="item-image">
+                            <img src="./assets/img/tin tức/gung.webp" alt="Gừng">
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <div class="item-image">
+                            <img src="./assets/img/tin tức/khoai-lang.jpg" alt="Khoai lang">
+                        </div>
+                        <div class="item-content">
+                            <h3>3. Khoai lang – Nguồn vitamin A dồi dào</h3>
+                            <p>Khoai lang là nguồn cung cấp vitamin A dồi dào dưới dạng beta-carotene,
+                                một chất chống oxy hóa mạnh mẽ giúp bảo vệ tế bào khỏi sự tấn công của các gốc tự do.
+                                Vitamin A còn giúp duy trì sức khỏe của hệ hô hấp, giúp cơ thể chống lại các bệnh nhiễm
+                                trùng.
+                            </p>
+                            <p><strong>Cách sử dụng:</strong> Khoai lang có thể luộc, hấp, hoặc chế biến thành các món
+                                như khoai lang chiên không dầu để vừa ngon miệng vừa bổ dưỡng.</p>
+                        </div>
+                    </div>
+                    <div class="blog-item reverse">
+                        <div class="item-content">
+                            <h3>4. Rau cải xoăn – "Siêu thực phẩm" cho hệ miễn dịch</h3>
+                            <p>Rau cải xoăn (kale) là một trong những loại rau lá xanh có hàm lượng dinh dưỡng cao nhất,
+                                chứa nhiều vitamin C, vitamin K và các chất chống oxy hóa. Vitamin C là chất không thể
+                                thiếu trong việc bảo vệ và tăng cường chức năng của các tế bào miễn dịch.</p>
+                            <p><strong>Cách sử dụng:</strong> Bạn có thể chế biến rau cải xoăn thành sinh tố xanh,
+                                salad, hoặc xào cùng các loại thực phẩm khác.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="./assets/img/tin tức/rau-cai-xoan.webp" alt="Cải xoăn">
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <div class="item-image">
+                            <img src="./assets/img/tin tức/ca-rot.webp" alt="Cà rốt">
+                        </div>
+                        <div class="item-content">
+                            <h3>5. Cà rốt – Tăng cường sức khỏe mắt và hệ miễn dịch</h3>
+                            <p>Cà rốt chứa nhiều beta-carotene – tiền chất của vitamin A – giúp cơ thể duy trì các chức
+                                năng của hệ miễn dịch và cải thiện sức khỏe đôi mắt. Bên cạnh đó, hàm lượng vitamin C
+                                trong cà rốt cũng giúp tăng cường hệ miễn dịch tự nhiên của cơ thể.
+                            </p>
+                            <p><strong>Cách sử dụng:</strong> Cà rốt có thể chế biến thành nước ép, nấu súp, hoặc thêm
+                                vào các món ăn khác như xào và nộm.</p>
+                        </div>
+                    </div>
+                    <div class="blog-item reverse">
+                        <div class="item-content">
+                            <h3>6. Bông cải xanh – Nguồn dinh dưỡng phong phú</h3>
+                            <p>Bông cải xanh là một trong những loại rau giàu vitamin và khoáng chất, đặc biệt là
+                                vitamin C, vitamin E và chất xơ. Nhờ vào hàm lượng chất chống oxy hóa cao, bông cải xanh
+                                giúp cơ thể ngăn ngừa các bệnh nhiễm trùng và cải thiện sức khỏe tổng thể.</p>
+                            <p><strong>Cách sử dụng:</strong> Bông cải xanh có thể hấp, xào hoặc trộn salad để giữ
+                                nguyên được lượng dinh dưỡng.</p>
+                        </div>
+                        <div class="item-image">
+                            <img src="./assets/img/tin tức/bong-cai-xanh.jpg" alt="Cải xanh">
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <div class="item-image">
+                            <img src="./assets/img/tin tức/nghe.jpg" alt="Nghệ">
+                        </div>
+                        <div class="item-content">
+                            <h3>7. Nghệ – Thực phẩm giúp kháng viêm tự nhiên</h3>
+                            <p>Nghệ chứa curcumin – một hợp chất có khả năng chống viêm và tăng cường hệ miễn dịch. Nghệ
+                                không chỉ tốt cho hệ tiêu hóa mà còn giúp ngăn ngừa nhiều loại bệnh nhờ tính chất kháng
+                                viêm mạnh mẽ.</p>
+                            <p><strong>Cách sử dụng:</strong> Sử dụng bột nghệ để pha với sữa ấm hoặc thêm nghệ tươi vào
+                                các món ăn hàng ngày để nhận được lợi ích tối đa.</p>
+                        </div>
+                    </div>
+                    <!-- Tiếp tục cho các mục khác, luân phiên thêm class 'reverse' cho các mục để so le -->
+                </section>
+
+                <footer class="blog-footer">
+                    <h2>Kết Luận</h2>
+                    <p>Các loại rau củ Việt Nam không chỉ phong phú về chủng loại mà còn đa dạng về công dụng tăng cường
+                        sức khỏe. Bằng cách sử dụng các loại thực phẩm tự nhiên này trong bữa ăn hàng ngày, bạn có thể
+                        tăng cường hệ miễn dịch, bảo vệ sức khỏe, và tạo nền tảng vững chắc để đối phó với các loại bệnh
+                        thường gặp. Thực hiện một chế độ ăn uống đa dạng và giàu dinh dưỡng sẽ là chìa khóa giúp cơ thể
+                        luôn khỏe mạnh.
+                        <br> <br>
+                        Hy vọng bài viết này đã mang đến cho bạn nhiều thông tin hữu ích về những loại rau củ tăng cường
+                        miễn dịch từ nông sản Việt Nam. Hãy cùng bổ sung những thực phẩm tuyệt vời này vào thực đơn hàng
+                        ngày để bảo vệ sức khỏe cho bản thân và gia đình!
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </section>
+    <!-- End danh mục sp -->
+    <!-- End body -->
+    <!-- footer  -->
+    <footer class="footer">
+        <div class="container d-flex justify-content-between">
+            <div class="contact-info">
+                <div class="title">Liên hệ</div>
+                <b class="info">Công ty TNHH Thực phẩm và Dịch Vụ Fiberico</b>
+                <p class="info">
+                    Địa chỉ: An Dương Vương - Phường 3 - Quận 5 - TP.Hồ Chí Minh
+                </p>
+                <p class="info">Hotline: <a href="#123">0939793999</a></p>
+                <p class="info">Email: <a href="mailto:contact@fiberico.vn">contact@fiberico.vn</a></p>
+            </div>
+            <div class="menu-function">
+                <div class="title">Fiberico.vn</div>
+                <li><a href="gioithieu.html#ve-chung-toi">Về chúng tôi</a></li>
+                <li><a href="gioithieu.html#cau-chuyen">Câu chuyện về Fiberico</a></li>
+                <li><a href="gioithieu.html#huong-dan">Hướng dẫn bảo quản</a></li>
+                <li><a href="gioithieu.html#blog">Blog Fiberico</a></li>
+                <li><a href="gioithieu.html#lien-he">Liên hệ</a></li>
+            </div>
+            <div class="help">
+                <div class="title">Trợ giúp</div>
+                <li><a href="gioithieu.html#hd-tt">Hướng dẫn thanh toán</a></li>
+                <li><a href="gioithieu.html#chinh-sach">Chính sách bảo mật</a></li>
+                <li><a href="gioithieu.html#cham-soc">Chăm sóc khách hàng</a></li>
+                <li><a href="gioithieu.html#dieu-khoan">Điều khoản sử dụng</a></li>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer  -->
+    <script src="./assets/bootstrap/jquery.slim.min.js"></script>
+    <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/home.js"></script>
+    <script src="./assets/js/shop.js"></script>
+    <script src="./assets/js/login.js"></script>
+</body>
+
+</html>

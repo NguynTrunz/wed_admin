@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/adfunc.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <title>Fiberico</title>
+</head>
+
+<body>
+    <section class="admin">
+        <div class="container">
+            <div class="function-admin">
+                <ul class="nav nav-tabs" id="adminTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="user-tab" data-bs-toggle="tab" href="#user" role="tab"
+                            aria-controls="user" aria-selected="true">Quản lý Người dùng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="product-tab" data-bs-toggle="tab" href="#product" role="tab"
+                            aria-controls="product" aria-selected="false">Quản lý Sản phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="order-tab" data-bs-toggle="tab" href="#order" role="tab"
+                            aria-controls="order" aria-selected="false">Quản lý Đơn hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="stats-tab" data-bs-toggle="tab" href="#stats" role="tab"
+                            aria-controls="stats" aria-selected="false">Thống kê Kinh doanh</a>
+                    </li>
+                </ul>
+                <div class="tab-content mt-3" id="adminTabContent">
+
+                    <!-- Quản lý Người dùng -->
+                    <div class="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user-tab">
+                        <h4>Quản lý Người dùng</h4>
+
+                        <!-- Ô tìm kiếm người dùng -->
+                        <input type="text" id="searchUserInput" class="form-control mb-3"
+                            placeholder="Tìm kiếm người dùng..." onkeyup="searchTable('searchUserInput', 'userTable')">
+
+                        <!-- Form thêm người dùng -->
+                        <input type="text" id="newUserName" class="form-control mb-1" placeholder="Tên người dùng">
+                        <input type="email" id="newUserEmail" class="form-control mb-1" placeholder="Email">
+                        <input type="text" id="newUserPhone" class="form-control mb-1" placeholder="Số điện thoại">
+                        <button onclick="addUser()" class="btn btnn btn-success">Thêm Người dùng</button>
+
+                        <!-- Bảng người dùng -->
+                        <table class="table table-bordered" id="userTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tên</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th> <!-- Cột mới cho Số điện thoại -->
+                                    <th>Trạng thái</th>
+                                    <th>Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userTableBody">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Nguyễn Thanh Phong</td>
+                                    <td>phong4269@gmail.com</td>
+                                    <td>0999333777</td>
+                                    <td>Hoạt động</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" onclick="editUser(this)">Sửa</button>
+                                        <button class="btn btn-danger btn-sm" onclick="deleteUser(this)">Xóa</button>
+                                        <button class="btn btn-warning btn-sm"
+                                            onclick="toggleBlockUser(this)">Khóa</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Nguyễn Hoàng Nhật Anh</td>
+                                    <td>anhdeptrai234@gmail.com</td>
+                                    <td>0983868386</td>
+                                    <td>Hoạt động</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" onclick="editUser(this)">Sửa</button>
+                                        <button class="btn btn-danger btn-sm" onclick="deleteUser(this)">Xóa</button>
+                                        <button class="btn btn-warning btn-sm"
+                                            onclick="toggleBlockUser(this)">Khóa</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <!-- Quản lý Sản phẩm -->
+                    <div class="tab-pane fade" id="product" role="tabpanel" aria-labelledby="product-tab">
+                        <h4>Quản lý Sản phẩm</h4>
+                        <input type="text" id="newProductName" class="form-control mb-1" placeholder="Tên sản phẩm">
+                        <select id="newProductType" class="form-control mb-1">
+                            <option value="Hoa quả">Hoa quả</option>
+                            <option value="Rau củ">Rau củ</option>
+                            <option value="Hạt sấy">Hạt sấy</option>
+                            <option value="Hữu cơ">Hữu cơ</option>
+                        </select>
+                        <input type="number" id="newProductPrice" class="form-control mb-1" placeholder="Giá">
+                        <input type="number" id="newProductStock" class="form-control mb-1"
+                            placeholder="Số lượng tồn kho">
+
+                        <div class="custom-file-container mb-1">
+                            <label for="newProductImage" class="custom-file-upload">Chọn tệp</label>
+                            <input class="pre-img" type="file" id="newProductImage" accept="image/*"
+                                onchange="previewImage(event)">
+                        </div>
+
+                        <!-- Image preview section -->
+                        <img id="imagePreview" class="img-thumbnail" src="#" alt="Image Preview"
+                            style="display: none; width: 100px; height: 100px; margin-top: 10px;">
+
+                        <button onclick="addProduct()" class="btn btn-success mb-3">Thêm Sản phẩm</button>
+
+
+
+                        <table class="table table-bordered" id="productTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Loại</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng tồn kho</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productTableBody">
+                                <!-- Sample product row for testing -->
+                                <tr>
+                                    <td>1</td>
+                                    <td>Chanh dây</td>
+                                    <td>Hoa quả</td>
+                                    <td>100,000₫</td>
+                                    <td>50</td>
+                                    <td><img src="./assets/img/san-pham/hoa-qua/chanh-day.png" alt="Product Image"
+                                            class="product-image" style="width: 50px; height: 50px;"></td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" onclick="editProduct(this)">Sửa</button>
+                                        <button class="btn btn-danger btn-sm" onclick="deleteProduct(this)">Xóa</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Quản lý Đơn hàng -->
+                    <div class="tab-pane fade" id="order" role="tabpanel" aria-labelledby="order-tab">
+                        <h4>Quản lý Đơn hàng</h4>
+
+                        <!-- Date Range Filter -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="startDate">Từ ngày:</label>
+                                <input type="date" id="startDate" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="endDate">Đến ngày:</label>
+                                <input type="date" id="endDate" class="form-control">
+                            </div>
+                            <div class="col ">
+                                <button onclick="filterOrders()" class="loc btnn btn mt-4">Lọc</button>
+                            </div>
+                        </div>
+
+                        <!-- Status and District Filter -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="orderStatusFilter">Trạng thái đơn hàng:</label>
+                                <select id="orderStatusFilter" class="form-select">
+                                    <option value="">Tất cả</option>
+                                    <option value="Chưa xử lý">Chưa xử lý</option>
+                                    <option value="Đã xác nhận">Đã xác nhận</option>
+                                    <option value="Đã giao thành công">Đã giao thành công</option>
+                                    <option value="Đã huỷ">Đã huỷ</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="districtFilter">Quận:</label>
+                                <select id="districtFilter" class="form-select">
+                                    <option value="">Tất cả</option>
+                                    <option value="Quận 1">Quận 1</option>
+                                    <option value="Quận 2">Quận 2</option>
+                                    <option value="Quận 3">Quận 3</option>
+                                    <option value="Quận 4">Quận 4</option>
+                                    <option value="Quận 5">Quận 5</option>
+                                    <option value="Quận 6">Quận 6</option>
+                                    <option value="Quận 7">Quận 7</option>
+                                    <option value="Quận 8">Quận 8</option>
+                                    <option value="Quận 9">Quận 9</option>
+                                    <option value="Quận 10">Quận 10</option>
+                                    <option value="Quận 11">Quận 11</option>
+                                    <option value="Quận 12">Quận 12</option>
+                                    <option value="Tân Bình">Tân Bình</option>
+                                    <option value="Tân Phú">Tân Phú</option>
+                                    <option value="Bình Tân">Bình Tân</option>
+                                    <option value="Gò Vấp">Gò Vấp</option>
+                                    <option value="Bình Thạnh">Bình Thạnh</option>
+                                    <option value="Phú Nhuận">Phú Nhuận</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Order Table -->
+                        <table class="table table-bordered" id="orderTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Khách hàng</th>
+                                    <th>Địa chỉ giao hàng</th>
+                                    <th>Trạng thái</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Thông tin</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orderTableBody">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Quận 1</td>
+                                    <td>Chưa xử lý</td>
+                                    <td>2024-11-01</td>
+                                    <td>
+                                        <button class="btn btn-info btn-sm" onclick="viewOrderDetails(1)">Chi
+                                            tiết</button>
+                                        <select class="form-select form-select-sm mt-1"
+                                            onchange="updateOrderStatus(1, this)">
+                                            <option value="Chưa xử lý">Chưa xử lý</option>
+                                            <option value="Đã xác nhận">Đã xác nhận</option>
+                                            <option value="Đã giao thành công">Đã giao thành công</option>
+                                            <option value="Đã huỷ">Đã huỷ</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Thống kê Kinh doanh -->
+                    <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="stats-tab">
+                        <h4>Thống kê Kinh doanh</h4>
+
+                        <!-- Date Range Filter -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="startStatDate">Từ ngày:</label>
+                                <input type="date" id="startStatDate" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="endStatDate">Đến ngày:</label>
+                                <input type="date" id="endStatDate" class="form-control">
+                            </div>
+                            <div class="col">
+                                <button onclick="generateStatistics()" class="btn btn-primary mt-4">Thống kê</button>
+                            </div>
+                        </div>
+
+                        <!-- Product Sales Statistics -->
+                        <h5>Thống kê theo Mặt hàng</h5>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Mặt hàng</th>
+                                    <th>Số lượng bán</th>
+                                    <th>Tổng doanh thu</th>
+                                    <th>Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productStatisticsBody">
+                                <!-- Product statistics rows will be dynamically generated here -->
+                            </tbody>
+                        </table>
+                        <p><strong>Tổng doanh thu:</strong> <span id="totalRevenue">0₫</span></p>
+                        <p><strong>Bán chạy nhất:</strong> <span id="bestSellingProduct">N/A</span></p>
+                        <p><strong>Ít bán nhất:</strong> <span id="leastSellingProduct">N/A</span></p>
+
+                        <!-- Customer Revenue Statistics -->
+                        <h5>Thống kê theo Khách hàng</h5>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Khách hàng</th>
+                                    <th>Tổng doanh thu</th>
+                                    <th>Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customerStatisticsBody">
+                                <!-- Customer statistics rows will be dynamically generated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./assets/bootstrap/jquery.slim.min.js"></script>
+    <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/adfunc.js"></script>
+</body>
+
+</html>

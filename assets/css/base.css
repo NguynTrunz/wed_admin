@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --color-one: #285737;
+    --color-two: #010148;
+    --color-three: #FF7800;
+    --color-four: #76A713;
+    --color-five: #EFEBE0;
+    
+    --font: "Poppins", sans-serif;
+    --font1: "Pinyon Script", serif;
+    --font2: "Roboto", sans-serif;
+    --font3: "Allura", cursive;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--font);
+    background-color: #EFEBE0;
+    position: relative;
+}
+a {
+ text-decoration: none;   
+}
+a:hover {
+ text-decoration: none;   
+}
+ul {
+    list-style: none;
+}

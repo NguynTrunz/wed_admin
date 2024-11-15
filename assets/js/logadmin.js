@@ -20,7 +20,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         // Lưu trạng thái đăng nhập
         sessionStorage.setItem("loggedIn", "true");
         // Chuyển hướng tới trang admin
-        window.location.href = "/adfunc.html"; // Thay đổi link tới trang bạn mong muốn
+        window.location.href = "adfunc.html"; // Thay đổi link tới trang bạn mong muốn
     } else {
         // Xóa mật khẩu để người dùng nhập lại
         document.getElementById("loginPassword").value = "";
@@ -31,13 +31,13 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 // Thêm sự kiện đăng xuất trên trang admin
 function handleLogout() {
     sessionStorage.removeItem("loggedIn"); // Xóa trạng thái đăng nhập
-    window.location.href = "/admin.html"; // Quay lại trang đăng nhập
+    window.location.href = "index.html"; // Quay lại trang đăng nhập
 }
 
 // Kiểm tra trạng thái khi vào trang admin
 function checkAdminAccess() {
     if (sessionStorage.getItem("loggedIn") !== "true") {
         alert("Bạn cần đăng nhập để truy cập!");
-        window.location.href = "/admin.html"; // Quay lại trang đăng nhập nếu chưa đăng nhập
+        window.location.href = "index.html"; // Quay lại trang đăng nhập nếu chưa đăng nhập
     }
 }

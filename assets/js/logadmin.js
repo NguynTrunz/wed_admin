@@ -1,6 +1,6 @@
 // Kiểm tra trạng thái đăng nhập khi tải trang đăng nhập
 if (sessionStorage.getItem("loggedIn") === "true") {
-    window.location.href = "/adfunc.html"; // Chuyển hướng tới trang admin nếu đã đăng nhập
+    window.location.href = "adfunc.html"; // Chuyển hướng tới trang admin nếu đã đăng nhập
 }
 
 // Xử lý sự kiện khi submit form đăng nhập
